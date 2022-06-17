@@ -40,8 +40,9 @@ npm run start
     ├── App.js               # main.js
     ├── index.css            # index.css
     ├── index.js             # index.js
-  ├── package.json           # package.json
+  ├── .gitignore             # .gitigore
   ├── package-lock.json      # package-lock.json
+  ├── package.json           # package.json
   ├── README.md              # README.md
   ...
   
