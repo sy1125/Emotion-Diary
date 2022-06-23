@@ -1,18 +1,13 @@
 import { emotionList } from "../util/emotion";
 import { getStringDate } from "../util/date";
-
-
-import { useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "./../App";
 import MyButton from ".//MyButton";
 import EmotionItem from "./EmotionItem";
 import MyHeader from "./MyHeader";
 
-
-
 const DiaryEditor = ({isEdit, originData}) => {
-    
     const contentRef = useRef();
     const [content, setContent] = useState("");
 
@@ -20,11 +15,11 @@ const DiaryEditor = ({isEdit, originData}) => {
     //기본 선택 감정 3번감정
     const [date, setDate] = useState(getStringDate(new Date()));
 
-    const {onCreate, onEdit, onRemove} = useContext(DiaryDispatchContext);
+    const { onCreate, onEdit, onRemove } = useContext(DiaryDispatchContext);
 
-    const handleClickEmote = (emotion) => {
+    const handleClickEmote = useCallback((emotion) => {
         setEmotion(emotion); // 클릭한 감정(emotion_id)으로 state 변경
-    }
+    },[]);
     const navigate = useNavigate();
 
     const handleSubmit = () => {
@@ -58,7 +53,6 @@ const DiaryEditor = ({isEdit, originData}) => {
         }
     }, [isEdit, originData])
     
-
     return (
         <div className="DiaryEditor">
             <MyHeader 
