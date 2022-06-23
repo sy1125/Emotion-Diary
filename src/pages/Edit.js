@@ -12,13 +12,13 @@ const Edit = () => {
   useEffect(()=> {
     if(diaryList.length >= 1) {
       const targetDiary = diaryList.find(
-        (it)=>parseInt(it.id) === parseInt(id)
+        (it) => parseInt(it.id) === parseInt(id)
       );
-    if(targetDiary) {
-      setOriginData(targetDiary);
-    }else {
-      navigate('/', {replace: true})
-    }
+      if(targetDiary) {
+        setOriginData(targetDiary);
+      }else {
+        navigate('/', {replace: true})
+      }
     };
   },[id,diaryList]);
 

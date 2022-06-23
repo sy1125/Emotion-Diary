@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext } from "../App";
 import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
