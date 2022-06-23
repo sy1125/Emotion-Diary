@@ -11,7 +11,7 @@ const Edit = () => {
 
   useEffect(() => {
     const titleElement = document.getElementsByTagName("title")[0];
-    titleElement.innerHTML = `Edit Diary - ${id}th` 
+    titleElement.innerHTML = `Edit Diary - ${id}th`
   },[])
 
   useEffect(()=> {
